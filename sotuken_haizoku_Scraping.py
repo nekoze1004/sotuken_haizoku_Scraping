@@ -7,11 +7,11 @@ url = "http://portal.fun.ac.jp/course/graduationStudy/2019/JP/essay.html"
 
 """
 teacher : 検索したい先生の名前。文字列。and検索をしたい場合は ["角", "康"]のようにList型で書く。
-themes  : 検索したいテーマたち。List型として書く。
+teemas  : 検索したいテーマたち。List型として書く。
 """
 
 teacher = ["角", "康"]
-themes = ["コミュニケーション", "メディア", "Cyber Physical Space"]
+teemas = ["コミュニケーション", "メディア", "Cyber Physical Space"]
 
 
 def find_word_and(page, words, n=0):
@@ -112,7 +112,7 @@ if __name__ == '__main__':
             name = get_student_name(s.text, ID)
             students[ID] = (name, teacher)
             y_sumi += 1
-        results = find_word_number(soup.text, themes)
+        results = find_word_number(soup.text, teemas)
         if len(results) > 0:
             ID = get_student_ID(link)
             name = get_student_name(s.text, ID)
@@ -131,5 +131,5 @@ if __name__ == '__main__':
     print(f"総人数:{len(links)}")
     print(f"404エラー:{count404}")
     print(f"{teacher}が含まれる人数:{y_sumi}")
-    print(f"{themes}が含まれる人数:{teema}")
+    print(f"{teemas}が含まれる人数:{teema}")
     print(f"{teacher}研を希望していると思われる人数:{len(students)}")
