@@ -10,11 +10,8 @@ teacher : 検索したい先生の名前。文字列。and検索をしたい場�
 teemas  : 検索したいテーマたち。List型として書く。
 """
 
-"""teacher = ["角", "康"]
-teemas = ["コミュニケーション", "メディア", "Cyber Physical Space"]"""
-
-teacher = "村井"
-teemas = ["小説・映画・アニメ・マンガ・ゲームなど作品と物語に関する研究", "言葉のレトリックや感性的な側面、より深い意味解釈に関する研究", "社会的な言語データに関する研究"]
+teacher = ["角", "康"]
+teemas = ["コミュニケーション", "メディア", "Cyber Physical Space"]
 
 
 def find_word_and(page, words, n=0):
