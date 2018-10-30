@@ -94,7 +94,7 @@ if __name__ == '__main__':
     # print(title)
     links = s.findAll("a")
     y_sumi = 0
-    theme = 0
+    teema = 0
     count404 = 0
     students = {}
     for link in tqdm(links[:-1]):  # 戻るリンク回避のため最後を除く
@@ -117,7 +117,7 @@ if __name__ == '__main__':
             ID = get_student_ID(link)
             name = get_student_name(s.text, ID)
             students[ID] = (name, results)
-            theme += 1
+            teema += 1
 
     table = prettytable.PrettyTable(["学籍番号", "氏名", "キーワード", "URL"])
     tem = "http://portal.fun.ac.jp/~b{}/essay.html"
@@ -131,5 +131,5 @@ if __name__ == '__main__':
     print(f"総人数:{len(links)}")
     print(f"404エラー:{count404}")
     print(f"{teacher}が含まれる人数:{y_sumi}")
-    print(f"{themes}が含まれる人数:{theme}")
+    print(f"{themes}が含まれる人数:{teema}")
     print(f"{teacher}研を希望していると思われる人数:{len(students)}")
